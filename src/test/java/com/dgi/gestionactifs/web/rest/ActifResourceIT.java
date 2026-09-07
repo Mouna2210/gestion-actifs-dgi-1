@@ -12,6 +12,7 @@ import com.dgi.gestionactifs.domain.Actif;
 import com.dgi.gestionactifs.domain.enumeration.StatutActif;
 import com.dgi.gestionactifs.domain.enumeration.TypeActif;
 import com.dgi.gestionactifs.repository.ActifRepository;
+import com.dgi.gestionactifs.security.AuthoritiesConstants;
 import com.dgi.gestionactifs.service.dto.ActifDTO;
 import com.dgi.gestionactifs.service.mapper.ActifMapper;
 import jakarta.persistence.EntityManager;
@@ -34,7 +35,7 @@ import tools.jackson.databind.ObjectMapper;
  */
 @IntegrationTest
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(authorities = AuthoritiesConstants.ADMIN)
 class ActifResourceIT {
 
     private static final String DEFAULT_IDENTIFIANT_UNIQUE = "AAAAAAAAAA";

@@ -113,7 +113,7 @@
     "@vitest/coverage-v8": "4.1.11",
     "angular-eslint": "22.1.0",
     "axios": "1.19.0",
-    "browser-sync": "3.0.4",
+    "browser-sync": "^3.0.4",
     "concurrently": "10.0.5",
     "cypress": "15.21.0",
     "cypress-terminal-report": "7.3.3",

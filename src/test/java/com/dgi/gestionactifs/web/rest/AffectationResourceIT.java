@@ -13,6 +13,7 @@ import com.dgi.gestionactifs.domain.Affectation;
 import com.dgi.gestionactifs.domain.User;
 import com.dgi.gestionactifs.repository.AffectationRepository;
 import com.dgi.gestionactifs.repository.UserRepository;
+import com.dgi.gestionactifs.security.AuthoritiesConstants;
 import com.dgi.gestionactifs.service.dto.AffectationDTO;
 import com.dgi.gestionactifs.service.mapper.AffectationMapper;
 import jakarta.persistence.EntityManager;
@@ -35,7 +36,7 @@ import tools.jackson.databind.ObjectMapper;
  */
 @IntegrationTest
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(authorities = AuthoritiesConstants.ADMIN)
 class AffectationResourceIT {
 
     private static final LocalDate DEFAULT_DATE_AFFECTATION = LocalDate.ofEpochDay(0L);

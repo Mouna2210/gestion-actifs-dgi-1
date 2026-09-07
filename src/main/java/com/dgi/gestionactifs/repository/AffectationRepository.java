@@ -1,4 +1,4 @@
-﻿package com.dgi.gestionactifs.repository;
+package com.dgi.gestionactifs.repository;
 
 import com.dgi.gestionactifs.domain.Affectation;
 import java.util.List;

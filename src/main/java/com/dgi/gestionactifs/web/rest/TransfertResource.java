@@ -1,4 +1,4 @@
-﻿package com.dgi.gestionactifs.web.rest;
+package com.dgi.gestionactifs.web.rest;
 
 import com.dgi.gestionactifs.repository.AffectationRepository;
 import com.dgi.gestionactifs.repository.TransfertRepository;
@@ -72,7 +72,7 @@ public class TransfertResource {
      * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new transfertDTO, or with status {@code 400 (Bad Request)} if the transfert has already an ID.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @PreAuthorize("hasAuthority('ROLE_TECHNICIEN') or hasAuthority('ROLE_AGENT')")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN') or hasAuthority('ROLE_TECHNICIEN') or hasAuthority('ROLE_AGENT')")
     @PostMapping("")
     public ResponseEntity<TransfertDTO> createTransfert(@Valid @RequestBody TransfertDTO transfertDTO) throws URISyntaxException {
         LOG.debug("REST request to save Transfert : {}", transfertDTO);
@@ -95,7 +95,7 @@ public class TransfertResource {
      * or with status {@code 500 (Internal Server Error)} if the transfertDTO couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @PreAuthorize("hasAuthority('ROLE_TECHNICIEN') or hasAuthority('ROLE_RESPONSABLE')")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN') or hasAuthority('ROLE_TECHNICIEN') or hasAuthority('ROLE_RESPONSABLE')")
     @PutMapping("/{id}")
     public ResponseEntity<TransfertDTO> updateTransfert(
         @PathVariable(value = "id", required = false) final Long id,

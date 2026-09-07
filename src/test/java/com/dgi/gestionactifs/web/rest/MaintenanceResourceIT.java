@@ -15,6 +15,7 @@ import com.dgi.gestionactifs.domain.enumeration.StatutMaintenance;
 import com.dgi.gestionactifs.domain.enumeration.TypeMaintenance;
 import com.dgi.gestionactifs.repository.MaintenanceRepository;
 import com.dgi.gestionactifs.repository.UserRepository;
+import com.dgi.gestionactifs.security.AuthoritiesConstants;
 import com.dgi.gestionactifs.service.dto.MaintenanceDTO;
 import com.dgi.gestionactifs.service.mapper.MaintenanceMapper;
 import jakarta.persistence.EntityManager;
@@ -37,7 +38,7 @@ import tools.jackson.databind.ObjectMapper;
  */
 @IntegrationTest
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(authorities = AuthoritiesConstants.ADMIN)
 class MaintenanceResourceIT {
 
     private static final TypeMaintenance DEFAULT_TYPE_MAINTENANCE = TypeMaintenance.PREVENTIVE;

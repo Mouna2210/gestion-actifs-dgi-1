@@ -1,4 +1,4 @@
-﻿package com.dgi.gestionactifs.web.rest;
+package com.dgi.gestionactifs.web.rest;
 
 import com.dgi.gestionactifs.repository.ActifRepository;
 import com.dgi.gestionactifs.repository.AffectationRepository;

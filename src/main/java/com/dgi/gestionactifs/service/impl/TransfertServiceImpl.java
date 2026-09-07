@@ -1,4 +1,4 @@
-﻿package com.dgi.gestionactifs.service.impl;
+package com.dgi.gestionactifs.service.impl;
 
 import com.dgi.gestionactifs.domain.Transfert;
 import com.dgi.gestionactifs.domain.enumeration.StatutTransfert;

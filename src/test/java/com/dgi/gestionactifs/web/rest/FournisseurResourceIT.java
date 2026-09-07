@@ -10,6 +10,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.dgi.gestionactifs.IntegrationTest;
 import com.dgi.gestionactifs.domain.Fournisseur;
 import com.dgi.gestionactifs.repository.FournisseurRepository;
+import com.dgi.gestionactifs.security.AuthoritiesConstants;
 import com.dgi.gestionactifs.service.dto.FournisseurDTO;
 import com.dgi.gestionactifs.service.mapper.FournisseurMapper;
 import jakarta.persistence.EntityManager;
@@ -31,7 +32,7 @@ import tools.jackson.databind.ObjectMapper;
  */
 @IntegrationTest
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(authorities = AuthoritiesConstants.ADMIN)
 class FournisseurResourceIT {
 
     private static final String DEFAULT_NOM = "AAAAAAAAAA";

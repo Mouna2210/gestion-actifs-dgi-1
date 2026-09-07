@@ -14,6 +14,7 @@ import com.dgi.gestionactifs.domain.User;
 import com.dgi.gestionactifs.domain.enumeration.StatutTransfert;
 import com.dgi.gestionactifs.repository.TransfertRepository;
 import com.dgi.gestionactifs.repository.UserRepository;
+import com.dgi.gestionactifs.security.AuthoritiesConstants;
 import com.dgi.gestionactifs.service.dto.TransfertDTO;
 import com.dgi.gestionactifs.service.mapper.TransfertMapper;
 import jakarta.persistence.EntityManager;
@@ -36,7 +37,7 @@ import tools.jackson.databind.ObjectMapper;
  */
 @IntegrationTest
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(authorities = AuthoritiesConstants.ADMIN)
 class TransfertResourceIT {
 
     private static final LocalDate DEFAULT_DATE_DEMANDE = LocalDate.ofEpochDay(0L);

@@ -12,6 +12,7 @@ import com.dgi.gestionactifs.domain.Contrat;
 import com.dgi.gestionactifs.domain.Fournisseur;
 import com.dgi.gestionactifs.domain.enumeration.TypeContrat;
 import com.dgi.gestionactifs.repository.ContratRepository;
+import com.dgi.gestionactifs.security.AuthoritiesConstants;
 import com.dgi.gestionactifs.service.dto.ContratDTO;
 import com.dgi.gestionactifs.service.mapper.ContratMapper;
 import jakarta.persistence.EntityManager;
@@ -34,7 +35,7 @@ import tools.jackson.databind.ObjectMapper;
  */
 @IntegrationTest
 @AutoConfigureMockMvc
-@WithMockUser
+@WithMockUser(authorities = AuthoritiesConstants.ADMIN)
 class ContratResourceIT {
 
     private static final TypeContrat DEFAULT_TYPE_CONTRAT = TypeContrat.GARANTIE;
